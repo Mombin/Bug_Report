@@ -1,5 +1,5 @@
 
-20.07.23 버그 발견(해결)
+# 20.07.23 버그 발견(해결)
 
 ### DeepFaceLab/merger/MergeMasked.py
 
@@ -16,7 +16,7 @@ Merging:   3%|##                     | 174/5941 [00:20<11:15,  8.54it/s]/home/jj
   out_img = img_bgr*(1-img_face_mask_a) + (out_img*img_face_mask_a)
 
 ```
-![그림 첨부](./picture/bugInMerge.png)
+![그림 첨부](./picture/bug_In_merge.png)
 
 - 문제 : merge 단계에서 위와같이 연산에 오류가 발생하게 됨
 
@@ -30,7 +30,11 @@ Merging:   3%|##                     | 174/5941 [00:20<11:15,  8.54it/s]/home/jj
 -  코드를 추가하면 문제없이 해결된다.
 
 ```python
+  #DeepFaceLab/merger/MergeMasked.py
+  #line 230
   img_bgr = np.nan_to_num(img_bgr)
   img_face_mask_a = np.nan_to_num(img_face_mask_a)
   out_img = np.nan_to_num(out_img)
 ```
+
+![fix_bug](./picture/fix_bug.png)
