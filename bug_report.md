@@ -1,5 +1,7 @@
 
-20.07.23 버그 발견
+20.07.23 버그 발견(해결)
+
+### DeepFaceLab/merger/MergeMasked.py
 
 ```sh
 /home/jjck5938/DeepFaceLab/merger/MergeMasked.py:238: RuntimeWarning: invalid value encountered in multiply
